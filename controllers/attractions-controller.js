@@ -3,11 +3,7 @@ import configuration from "../knexfile.js";
 
 
 const knex = initKnex(configuration);
-
 // GET attractions for specific city
-
-
-
 const getAttractionsById = async (req, res) => {
     try{
 

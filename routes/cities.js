@@ -1,9 +1,8 @@
 import * as cityController from "../controllers/city-controller.js";
-import * as attractionsController from "../controllers/attractions-controller.js";
 
 import express from "express";
+import { getImagesById } from "../controllers/images-controller.js";
 const cityRouter = express.Router();
-const attractionsRouter = express.Router();
 
 
 cityRouter
@@ -18,5 +17,8 @@ cityRouter
     .route("/:id/attractions")
     .get(cityController.getAllAttractionsByCities);
 
+cityRouter
+    .route("/:id/images")
+    .get(cityController.getImagesByCity);
 
-export { cityRouter, attractionsRouter};    
+export { cityRouter};    
