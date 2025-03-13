@@ -69,4 +69,30 @@ const getAllAttractionsByCities = async (req, res) => {
     }
 };
 
-export { getAllCities, getCityById, getAllAttractionsByCities };
+// get images by city
+const getImagesByCity = async (req, res) => {
+
+    try {
+        const { id } = req.params;
+        const data = await knex('images')
+            .select("id", "url", "alt_text", "is_featured", "display_order")
+            .where({ imageable_type: "city", imageable_id: id })
+            .orderBy("display_order");
+
+        res.status(200).json({
+            city_id: id,
+            data: data.map(img => ({
+                id: img.id,
+                url: img.url,
+                alt_text: img.alt_text,
+                is_featured: img.is_featured === 1, // Convert 1 to true
+                display_order: img.display_order
+            }))
+        });
+    } catch (error) {
+        console.error(error);
+        res.status(400).json({ error: 'Server error' });
+    }
+}
+
+export { getAllCities, getCityById, getAllAttractionsByCities, getImagesByCity }; 
