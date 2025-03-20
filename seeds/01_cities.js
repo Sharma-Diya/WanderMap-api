@@ -9,7 +9,7 @@ export async function seed(knex) {
       id: 1,
       name: 'Toronto',
       province: 'Ontario',
-      description: 'Toronto is the capital city of the Canadian province of Ontario. It is the most populous city in Canada and the fourth most populous city in North America.',
+      description: 'Canada\'s largest city, known for its diverse culture, iconic CN Tower, and vibrant arts scene.',
       latitude: 43.6532,
       longitude: -79.3832,
       // image_url: 'https://images.unsplash.com/photo-1517935706615-2717063c2225?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dG9yb250b3xlbnwwfHwwfHx8MA%3D%3D'
@@ -18,7 +18,7 @@ export async function seed(knex) {
       id: 2,
       name: 'Vancouver',
       province: 'British Columbia',
-      description: 'Vancouver is a major city in western Canada, located in the Lower Mainland region of British Columbia. It is one of the most ethnically and linguistically diverse cities in Canada.',
+      description: 'A stunning coastal city surrounded by mountains, offering outdoor activities and a thriving food scene.',
       latitude: 49.2827,
       longitude: -123.1207,
       // image_url: 'https://t4.ftcdn.net/jpg/03/38/15/91/360_F_338159126_WEv4wuExKtcM41s3owygSsbOcETE3PNP.jpg'
@@ -28,7 +28,7 @@ export async function seed(knex) {
       id: 3,
       name: 'Montreal',
       province: 'Quebec',
-      description: 'Montreal is the second-most populous city in Canada and the most populous city in the Canadian province of Quebec. Founded in 1642, it is named after Mount Royal, the triple-peaked hill in the heart of the city.',
+      description: 'A historic city with European charm, famous for its cobblestone streets, festivals, and French-Canadian culture.',
       latitude: 45.5017,
       longitude: -73.5673,
       // image_url: 'https://t4.ftcdn.net/jpg/03/38/15/91/360_F_338159126_WEv4wuExKtcM41s3owygSsbOcETE3PNP.jpg'
@@ -38,7 +38,7 @@ export async function seed(knex) {
       id: 4,
       name: 'Calgary',
       province: 'Alberta',
-      description: 'Calgary is the largest city in the western Canadian province of Alberta and the largest municipality in western Canada. It is situated at the confluence of the Bow River and the Elbow River in the south of the province, in an area of foothills and prairie.',
+      description: 'A modern city known for the Calgary Stampede, a famous rodeo and festival, and its proximity to the Rockies.',
       latitude: 51.0447,
       longitude: -114.0719,
       // image_url: 'https://t4.ftcdn.net/jpg/03/38/15/91/360_F_338159126_WEv4wuExKtcM41s3owygSsbOcETE3PNP.jpg'
@@ -48,7 +48,7 @@ export async function seed(knex) {
       id: 5,
       name: 'Ottawa',
       province: 'Ontario',
-      description: 'Ottawa is the capital city of Canada. It is located at the confluence of the Ottawa River and the Rideau River in the southern portion of the province of Ontario.',
+      description: 'Canada\'s capital city, home to Parliament Hill, museums, and historical landmarks.',
       latitude: 45.4215,
       longitude: -75.6972,
       // image_url: 'https://t4.ftcdn.net/jpg/03/38/15/91/360_F_338159126_WEv4wuExKtcM41s3owygSsbOcETE3PNP.jpg'
@@ -56,13 +56,52 @@ export async function seed(knex) {
     },
     {
       id: 6,
-      name: 'Edmonton',
-      province: 'Alberta',
-      description: 'Edmonton is the vibrant capital city of Alberta, Canada, known for its rich history, cultural diversity, and beautiful landscapes. Located in the heart of the province, Edmonton serves as the economic, political, and cultural hub of the region. With its thriving arts scene, festivals, and outdoor activities, it offers a mix of urban amenities and natural beauty.',
-      latitude: 45.4215,
-      longitude: -75.6972,
+      name: 'Quebec City',
+      province: 'Quebec',
+      description: "A UNESCO World Heritage site, known for its historic architecture, including the Château Frontenac.",
+      latitude: 46.8139,
+      longitude: -71.2080,
       // image_url: 'https://t4.ftcdn.net/jpg/03/38/15/91/360_F_338159126_WEv4wuExKtcM41s3owygSsbOcETE3PNP.jpg'
 
+    },
+    {
+      id: 7,
+      name: 'Banff',
+      province: 'Alberta',
+      description: "Located in the Canadian Rockies, offering breathtaking mountain scenery, hiking, and skiing.",
+      latitude: 51.1784,
+      longitude: -115.5728,
+      // image_url: 'https://t4.ftcdn.net/jpg/03/38/15/91/360_F_338159126_WEv4wuExKtcM41s3owygSsbOcETE3PNP.jpg'
+
+    },
+    {
+      id: 8,
+      name: 'Victoria',
+      province: 'British Columbia',
+      description: "Known as the 'Garden City,' offering beautiful gardens, whale watching, and a relaxed atmosphere.",
+      latitude: 48.4284,
+      longitude: -123.3656,
+      // image_url: 'https://t4.ftcdn.net/jpg/03/38/15/91/360_F_338159126_WEv4wuExKtcM41s3owygSsbOcETE3PNP.jpg'
+
+    },
+    {
+      id: 9,
+      name: 'Halifax',
+      province: 'Nova Scotia',
+      description: "A historic port city with a rich maritime heritage, friendly locals, and delicious seafood.",
+      latitude: 44.6488,
+      longitude: -63.5752,
+      // image_url: 'https://t4.ftcdn.net/jpg/03/38/15/91/360_F_338159126_WEv4wuExKtcM41s3owygSsbOcETE3PNP.jpg'
+
+    },
+    {
+      id: 10,
+      name: "St. John's",
+      province: "Newfoundland and Labrador",
+      description: "The oldest city in North America, known for its colorful houses, lively music scene, and stunning coastal scenery.",
+      latitude: 47.5615,
+      longitude: -52.7126,
+      // image_url: 'https://t4.ftcdn.net/jpg/03/38/15/91/360_F_338159126_WEv4wuExKtcM41s3owygSsbOcETE3PNP.jpg'
     },
   ]);
 };
