@@ -5,7 +5,6 @@ import configuration from "../knexfile.js";
 const knex = initKnex(configuration);
 // Get all attractions
 const getAllAttractions = async (req, res) => {
-
     try{
         const data = await knex('attractions').select(
             "attractions.id",
@@ -14,9 +13,15 @@ const getAllAttractions = async (req, res) => {
             "attractions.address",
             "attractions.category",
             "cities.id as city_id",
-            "cities.name as city_name"
+            "cities.name as city_name",
+            knex.raw('JSON_ARRAYAGG(JSON_OBJECT(\'url\', images.url, \'alt_text\', images.alt_text)) as images')
         )
-        .join("cities", "attractions.city_id","=","cities.id");
+        .join("cities", "attractions.city_id","=","cities.id")
+        .leftJoin("images", function() {
+            this.on('images.imageable_id', '=', 'attractions.id')
+                .on('images.imageable_type', '=', knex.raw('?', ['attraction']));
+        })
+        .groupBy("attractions.id", "cities.id");
         res.json(data);
 
     }catch(err){
@@ -24,7 +29,6 @@ const getAllAttractions = async (req, res) => {
         res.status(400).json({ error: 'Server error' });
     }
 };
-
 // GET attractions for specific city
 const getAttractionsById = async (req, res) => {
     try{
