@@ -10,30 +10,30 @@ export async function seed(knex) {
     const cityItinerariesData = {
       "Toronto": {
         "Summer": [
-          { time: "9:00 AM", activity: "Toronto Islands", description: "Take a ferry to enjoy beaches and views." },
-          { time: "11:00 AM", activity: "St. Lawrence Market", description: "Explore food stalls and shops." },
-          { time: "1:00 PM", activity: "Lunch at a patio in the Distillery District", description: "Enjoy a meal outdoors." },
-          { time: "3:00 PM", activity: "Kensington Market", description: "Wander through this eclectic neighborhood." },
-          { time: "6:00 PM", activity: "Dinner on Queen Street West", description: "Experience trendy dining." },
-          { time: "8:00 PM", activity: "Outdoor concert at Budweiser Stage", description: "Enjoy Toronto's summer entertainment." },
+          { time: "9:00 AM", activity: "Toronto Islands", description: "Take a ferry to enjoy beaches and views.",latitude:43.6215, longitude:-79.37889 },
+          { time: "11:00 AM", activity: "St. Lawrence Market", description: "Explore food stalls and shops.",latitude:43.6500,longitude:-79.3733 },
+          { time: "1:00 PM", activity: "Lunch at a patio in the Distillery District", description: "Enjoy a meal outdoors.",latitude: 43.6517,longitude:- 79.3591 },
+          { time: "3:00 PM", activity: "Kensington Market", description: "Wander through this eclectic neighborhood.",latitude: 43.6568,longitude:- 79.4005},
+          { time: "6:00 PM", activity: "Dinner on Queen Street West", description: "Experience trendy dining.", latitude:43.6485 ,longitude:- 79.3973 },
+          { time: "8:00 PM", activity: "Outdoor concert at Budweiser Stage", description: "Enjoy Toronto's summer entertainment.", latitude:43.6277 ,longitude:- 79.4194}
         ],
         "Winter": [
-          { time: "9:00 AM", activity: "Hockey Hall of Fame", description: "Explore Canada's hockey history." },
-          { time: "11:00 AM", activity: "PATH Underground City", description: "Discover the extensive underground network." },
-          { time: "1:00 PM", activity: "Lunch at a cozy restaurant in Yorkville", description: "Warm up with a hearty meal." },
-          { time: "3:00 PM", activity: "Royal Ontario Museum", description: "Discover art, culture, and natural history." },
-          { time: "6:00 PM", activity: "Dinner in a heated patio in the Entertainment District", description: "Enjoy winter dining." },
-          { time: "8:00 PM", activity: "See a show at a theatre", description: "Enjoy Toronto's indoor entertainment." },
+          { time: "9:00 AM", activity: "Hockey Hall of Fame", description: "Explore Canada's hockey history.",latitude:43.6435 ,longitude:- 79.3785 },
+          { time: "11:00 AM", activity: "PATH Underground City", description: "Discover the extensive underground network." ,latitude:43.6490 ,longitude:-79.3805 },
+          { time: "1:00 PM", activity: "Lunch at a cozy restaurant in Yorkville", description: "Warm up with a hearty meal.",latitude:43.6707 ,longitude:-79.3940 },
+          { time: "3:00 PM", activity: "Royal Ontario Museum", description: "Discover art, culture, and natural history.",latitude: 43.6677,longitude:-79.3948 },
+          { time: "6:00 PM", activity: "Dinner in a heated patio in the Entertainment District", description: "Enjoy winter dining.",latitude:43.6465 ,longitude:-79.3891},
+          { time: "8:00 PM", activity: "See a show at a theatre", description: "Enjoy Toronto's indoor entertainment.",latitude: 43.6532,longitude:-79.3805 },
         ]
       },
       "Vancouver": {
         "Summer": [
-          { time: "9:00 AM", activity: "Stanley Park", description: "Bike or walk the seawall." },
-          { time: "11:00 AM", activity: "Granville Island Market", description: "Explore artisan shops and food stalls." },
-          { time: "1:00 PM", activity: "Lunch on a patio in Gastown", description: "Dine in Vancouver's historic heart." },
-          { time: "3:00 PM", activity: "English Bay Beach", description: "Relax on the beach." },
-          { time: "6:00 PM", activity: "Dinner in Yaletown", description: "Enjoy upscale dining." },
-          { time: "8:00 PM", activity: "Sunset at English Bay", description: "Relax and enjoy the view." },
+          { time: "9:00 AM", activity: "Stanley Park", description: "Bike or walk the seawall.",latitude:49.3043 ,longitude:-123.1440  },
+          { time: "11:00 AM", activity: "Granville Island Market", description: "Explore artisan shops and food stalls.",latitude:49.2717 ,longitude:-123.1349 },
+          { time: "1:00 PM", activity: "Lunch on a patio in Gastown", description: "Dine in Vancouver's historic heart.",latitude:49.2820 ,longitude:-123.1063  },
+          { time: "3:00 PM", activity: "English Bay Beach", description: "Relax on the beach.",latitude:49.2850,longitude:-123.1390 },
+          { time: "6:00 PM", activity: "Dinner in Yaletown", description: "Enjoy upscale dining.",latitude:49.2730 ,longitude:123.1210 },
+          { time: "8:00 PM", activity: "Sunset at English Bay", description: "Relax and enjoy the view.",latitude:49.2850 ,longitude: 123.1390},
         ],
         "Winter": [
           { time: "9:00 AM", activity: "Grouse Mountain", description: "Skiing, snowboarding, or snowshoeing." },
@@ -212,6 +212,8 @@ export async function seed(knex) {
             activity: item.activity,
             description: item.description,
             order: order++,
+            latitude: item.latitude,   // Add latitude
+            longitude: item.longitude, // Add longitude
           });
         }
       }
