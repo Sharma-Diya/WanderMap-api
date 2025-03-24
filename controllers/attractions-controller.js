@@ -3,7 +3,6 @@ import configuration from "../knexfile.js";
 
 
 const knex = initKnex(configuration);
-// Get all attractions
 const getAllAttractions = async (req, res) => {
     try{
         const data = await knex('attractions').select(
@@ -29,7 +28,7 @@ const getAllAttractions = async (req, res) => {
         res.status(400).json({ error: 'Server error' });
     }
 };
-// GET attractions for specific city
+
 const getAttractionsById = async (req, res) => {
     try{
 
@@ -54,7 +53,6 @@ const getAttractionsById = async (req, res) => {
             });
         }
        
-         // Fetch attractions images
          const images = await knex("images")
          .select("id", "url", "alt_text", "is_featured", "display_order")
          .where({ imageable_type: "place", imageable_id: id })

@@ -3,7 +3,6 @@ import configuration from "../knexfile.js";
 
 const knex = initKnex(configuration);
 
-// Get all images
 const getAllImages = async (req, res) => {
 
     try {
@@ -16,7 +15,6 @@ const getAllImages = async (req, res) => {
     }
 }
 
-// Get image by id
 const getImagesById = async (req, res) => {
 
     try {

@@ -1,12 +1,9 @@
 export async function seed(knex) {
-    // Clear existing data
     await knex('itineraries').del();  
   
-    // Fetch city IDs and map them to their names
     const cities = await knex('cities').select('id', 'name');
     const cityMap = Object.fromEntries(cities.map(({ id, name }) => [name, id]));
   
-    // Define seasons and city names
     const seasons = ["Summer", "Winter"];
     const cityNames = [
       { city: "Toronto", province: "Ontario" },
@@ -21,11 +18,8 @@ export async function seed(knex) {
       { city: "St. John's", province: "Newfoundland and Labrador" }
     ];
   
-    // Generate itineraries using flatMap
     const itineraries = cityNames.flatMap(({ city, province }) => {
-      const cityKey = city;  // Only use the city name without the province
-  
-      // Check if the city exists in the cityMap
+      const cityKey = city;  
       if (!cityMap[cityKey]) {
         throw new Error(`City not found: ${cityKey}`);
       }
@@ -37,7 +31,6 @@ export async function seed(knex) {
       }));
     });
   
-    // Insert generated itineraries into the database
     await knex('itineraries').insert(itineraries);
   
     console.log(`Inserted ${itineraries.length} itineraries.`);

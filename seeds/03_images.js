@@ -45,7 +45,6 @@ export async function seed(knex) {
   const jellybeanRow = await knex('attractions').where('name', 'Jellybean Row').first();
   const capeSpear = await knex('attractions').where('name', 'Cape Spear').first();
 
-  // Inserts seed entries with direct references using IDs
   await knex('images').insert([
     // City images
     {
@@ -133,25 +132,25 @@ export async function seed(knex) {
   await knex('images').insert([
     // Toronto attractions
     {
-      url: '/images/attractions/cn_tower.jpg', // Replace with your actual URL or local path
+      url: '/images/attractions/cn_tower.jpg',
       alt_text: 'CN Tower at sunset',
-      imageable_type: 'attraction', // Or 'place'
+      imageable_type: 'attraction', 
       imageable_id: cnTower.id,
       is_featured: true,
       display_order: 1
     },
     {
-      url: '/images/attractions/rom.jpg', // Replace with your actual URL or local path
+      url: '/images/attractions/rom.jpg', 
       alt_text: 'Royal Ontario Museum building',
-      imageable_type: 'attraction', // Or 'place'
+      imageable_type: 'attraction', 
       imageable_id: rom.id,
       is_featured: true,
       display_order: 1
     },
     {
-      url: '/images/attractions/dd.jpg', // Replace with your actual URL or local path
+      url: '/images/attractions/dd.jpg', 
       alt_text: 'Distillery District architecture',
-      imageable_type: 'attraction', // Or 'place'
+      imageable_type: 'attraction', 
       imageable_id: distilleryDistrict.id,
       is_featured: false,
       display_order: 1
@@ -159,25 +158,25 @@ export async function seed(knex) {
 
     // Vancouver attractions
     {
-      url: '/images/attractions/sp.jpg', // Replace with your actual URL or local path
+      url: '/images/attractions/sp.jpg',
       alt_text: 'Stanley Park seawall',
-      imageable_type: 'attraction', // Or 'place'
+      imageable_type: 'attraction',
       imageable_id: stanleyPark.id,
       is_featured: true,
       display_order: 1
     },
     {
-      url: '/images/attractions/gi.jpg', // Replace with your actual URL or local path
+      url: '/images/attractions/gi.jpg', 
       alt_text: 'Granville Island market',
-      imageable_type: 'attraction', // Or 'place'
+      imageable_type: 'attraction', 
       imageable_id: granvilleIsland.id,
       is_featured: true,
       display_order: 1
     },
     {
-      url: '/images/attractions/cb.jpg', // Replace with your actual URL or local path
+      url: '/images/attractions/cb.jpg', 
       alt_text: 'Capilano Suspension Bridge',
-      imageable_type: 'attraction', // Or 'place'
+      imageable_type: 'attraction', 
       imageable_id: capilanoBridge.id,
       is_featured: false,
       display_order: 1
@@ -185,25 +184,25 @@ export async function seed(knex) {
 
     // Montreal attractions
     {
-      url: '/images/attractions/ndb.jpg', // Replace with your actual URL or local path
+      url: '/images/attractions/ndb.jpg', 
       alt_text: 'Interior of Notre-Dame Basilica',
-      imageable_type: 'attraction', // Or 'place'
+      imageable_type: 'attraction', 
       imageable_id: notreDameBasilica.id,
       is_featured: true,
       display_order: 1
     },
     {
-      url: '/images/attractions/mrp.jpg', // Replace with your actual URL or local path
+      url: '/images/attractions/mrp.jpg', 
       alt_text: 'View from Mount Royal Park',
-      imageable_type: 'attraction', // Or 'place'
+      imageable_type: 'attraction', 
       imageable_id: mountRoyalPark.id,
       is_featured: true,
       display_order: 1
     },
     {
-      url: '/images/attractions/old_montreal.jpg', // Replace with your actual URL or local path
+      url: '/images/attractions/old_montreal.jpg', 
       alt_text: 'Cobblestone streets of Old Montreal',
-      imageable_type: 'attraction', // Or 'place'
+      imageable_type: 'attraction', 
       imageable_id: oldMontreal.id,
       is_featured: false,
       display_order: 1
@@ -211,25 +210,25 @@ export async function seed(knex) {
 
     // Calgary attractions
     {
-      url: '/images/attractions/calgary_tower.jpg', // Replace with your actual URL or local path
+      url: '/images/attractions/calgary_tower.jpg', 
       alt_text: 'Calgary Tower at night',
-      imageable_type: 'attraction', // Or 'place'
+      imageable_type: 'attraction', 
       imageable_id: calgaryTower.id,
       is_featured: true,
       display_order: 1
     },
     {
-      url: '/images/attractions/calgary_zoo.jpg', // Replace with your actual URL or local path
+      url: '/images/attractions/calgary_zoo.jpg', 
       alt_text: 'Entrance to the Calgary Zoo',
-      imageable_type: 'attraction', // Or 'place'
+      imageable_type: 'attraction', 
       imageable_id: calgaryZoo.id,
       is_featured: true,
       display_order: 1
     },
     {
-      url: '/images/attractions/heritage_park.jpg', // Replace with your actual URL or local path
+      url: '/images/attractions/heritage_park.jpg', 
       alt_text: 'Heritage Park Historical Village',
-      imageable_type: 'attraction', // Or 'place'
+      imageable_type: 'attraction', 
       imageable_id: heritagePark.id,
       is_featured: false,
       display_order: 1
@@ -237,25 +236,25 @@ export async function seed(knex) {
 
     // Ottawa attractions
     {
-      url: '/images/attractions/p_hill.jpg', // Replace with your actual URL or local path
+      url: '/images/attractions/p_hill.jpg', 
       alt_text: 'Parliament Buildings in Ottawa',
-      imageable_type: 'attraction', // Or 'place'
+      imageable_type: 'attraction', 
       imageable_id: parliamentHill.id,
       is_featured: true,
       display_order: 1
     },
     {
-      url: '/images/attractions/war_m.jpg', // Replace with your actual URL or local path
+      url: '/images/attractions/war_m.jpg', 
       alt_text: 'Canadian War Museum exterior',
-      imageable_type: 'attraction', // Or 'place'
+      imageable_type: 'attraction', 
       imageable_id: canadianWarMuseum.id,
       is_featured: true,
       display_order: 1
     },
     {
-      url: '/images/attractions/national_gallery.jpg', // Replace with your actual URL or local path
+      url: '/images/attractions/national_gallery.jpg', 
       alt_text: 'National Gallery of Canada entrance',
-      imageable_type: 'attraction', // Or 'place'
+      imageable_type: 'attraction', 
       imageable_id: nationalGallery.id,
       is_featured: true,
       display_order: 1
@@ -263,25 +262,25 @@ export async function seed(knex) {
 
     // Quebec City Attractions
     {
-      url: '/images/attractions/front.jpg', // Replace with your actual URL or local path
+      url: '/images/attractions/front.jpg', 
       alt_text: 'Château Frontenac hotel',
-      imageable_type: 'attraction', // Or 'place'
+      imageable_type: 'attraction', 
       imageable_id: chateauFrontenac.id,
       is_featured: true,
       display_order: 1
     },
     {
-      url: '/images/attractions/old_quebec.jpg', // Replace with your actual URL or local path
+      url: '/images/attractions/old_quebec.jpg', 
       alt_text: 'Street in Old Quebec',
-      imageable_type: 'attraction', // Or 'place'
+      imageable_type: 'attraction', 
       imageable_id: oldQuebec.id,
       is_featured: true,
       display_order: 1
     },
     {
-      url: '/images/attractions/abraham.jpg', // Replace with your actual URL or local path
+      url: '/images/attractions/abraham.jpg', 
       alt_text: 'Plains of Abraham park',
-      imageable_type: 'attraction', // Or 'place'
+      imageable_type: 'attraction', 
       imageable_id: plainsOfAbraham.id,
       is_featured: false,
       display_order: 1
@@ -289,25 +288,25 @@ export async function seed(knex) {
 
     // Banff Attractions
     {
-      url: '/images/attractions/l_louise.jpg', // Replace with your actual URL or local path
+      url: '/images/attractions/l_louise.jpg', 
       alt_text: 'Lake Louise with mountains',
-      imageable_type: 'attraction', // Or 'place'
+      imageable_type: 'attraction', 
       imageable_id: lakeLouise.id,
       is_featured: true,
       display_order: 1
     },
     {
-      url: '/images/attractions/bnp.jpg', // Replace with your actual URL or local path
+      url: '/images/attractions/bnp.jpg', 
       alt_text: 'Landscape in Banff National Park',
-      imageable_type: 'attraction', // Or 'place'
+      imageable_type: 'attraction', 
       imageable_id: banffNationalPark.id,
       is_featured: true,
       display_order: 1
     },
     {
-      url: '/images/attractions/lake_m.jpg', // Replace with your actual URL or local path
+      url: '/images/attractions/lake_m.jpg', 
       alt_text: 'Moraine Lake and Valley of the Ten Peaks',
-      imageable_type: 'attraction', // Or 'place'
+      imageable_type: 'attraction', 
       imageable_id: moraineLake.id,
       is_featured: false,
       display_order: 1
@@ -315,25 +314,25 @@ export async function seed(knex) {
 
     // Victoria Attractions
     {
-      url: '/images/attractions/garden.jpg', // Replace with your actual URL or local path
+      url: '/images/attractions/garden.jpg', 
       alt_text: 'Floral display at Butchart Gardens',
-      imageable_type: 'attraction', // Or 'place'
+      imageable_type: 'attraction', 
       imageable_id: butchartGardens.id,
       is_featured: true,
       display_order: 1
     },
     {
-      url: '/images/attractions/parli.jpg', // Replace with your actual URL or local path
+      url: '/images/attractions/parli.jpg', 
       alt_text: 'British Columbia Parliament Buildings',
-      imageable_type: 'attraction', // Or 'place'
+      imageable_type: 'attraction', 
       imageable_id: bcParliament.id,
       is_featured: true,
       display_order: 1
     },
     {
-      url: '/images/attractions/bc_m.jpg', // Replace with your actual URL or local path
+      url: '/images/attractions/bc_m.jpg', 
       alt_text: 'Entrance to the Royal BC Museum',
-      imageable_type: 'attraction', // Or 'place'
+      imageable_type: 'attraction', 
       imageable_id: royalBcMuseum.id,
       is_featured: false,
       display_order: 1
@@ -341,25 +340,25 @@ export async function seed(knex) {
 
     // Halifax Attractions
     {
-      url: '/images/attractions/citadel.jpg', // Replace with your actual URL or local path
+      url: '/images/attractions/citadel.jpg', 
       alt_text: 'Halifax Citadel Historic Site',
-      imageable_type: 'attraction', // Or 'place'
+      imageable_type: 'attraction', 
       imageable_id: halifaxCitadel.id,
       is_featured: true,
       display_order: 1
     },
     {
-      url: '/images/attractions/cove.jpg', // Replace with your actual URL or local path
+      url: '/images/attractions/cove.jpg', 
       alt_text: 'Lighthouse at Peggy\'s Cove',
-      imageable_type: 'attraction', // Or 'place'
+      imageable_type: 'attraction', 
       imageable_id: peggysCove.id,
       is_featured: true,
       display_order: 1
     },
     {
-      url: '/images/attractions/boardwalk.jpg', // Replace with your actual URL or local path
+      url: '/images/attractions/boardwalk.jpg', 
       alt_text: 'Halifax Waterfront Boardwalk',
-      imageable_type: 'attraction', // Or 'place'
+      imageable_type: 'attraction', 
       imageable_id: waterfrontBoardwalk.id,
       is_featured: false,
       display_order: 1
@@ -367,24 +366,24 @@ export async function seed(knex) {
 
     // St. John's Attractions
     {
-      url: '/images/attractions/hill.jpg', // Replace with your actual URL or local path
+      url: '/images/attractions/hill.jpg', 
       alt_text: 'Signal Hill overlooking St. John\'s',
-      imageable_type: 'attraction', // Or 'place'
+      imageable_type: 'attraction', 
       imageable_id: signalHill.id,
       is_featured: true,
       display_order: 1
     },
     {
-      url: '/images/attractions/row.jpg', // Replace with your actual URL or local path
+      url: '/images/attractions/row.jpg', 
       alt_text: 'Colorful houses of Jellybean Row',
-      imageable_type: 'attraction', // Or 'place'
+      imageable_type: 'attraction', 
       imageable_id: jellybeanRow.id,
       is_featured: true,
       display_order: 1
     }, {
-      url: '/images/attractions/cape.jpg', // Replace with your actual URL or local path
+      url: '/images/attractions/cape.jpg', 
       alt_text: 'Lighthouse at Cape Spear',
-      imageable_type: 'attraction', // Or 'place'
+      imageable_type: 'attraction', 
       imageable_id: capeSpear.id,
       is_featured: false,
       display_order: 1

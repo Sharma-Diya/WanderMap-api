@@ -1,9 +1,6 @@
-// db/seeds/02_attractions.js
 export async function seed(knex) {
-  // Deletes ALL existing entries
   await knex('attractions').del();
 
-  // Get the city IDs
   const toronto = await knex('cities').where('name', 'Toronto').first();
   const vancouver = await knex('cities').where('name', 'Vancouver').first();
   const montreal = await knex('cities').where('name', 'Montreal').first();
@@ -15,7 +12,6 @@ export async function seed(knex) {
   const halifax = await knex('cities').where('name', 'Halifax').first();
   const stJohns = await knex('cities').where('name', "St. John's").first();
 
-  // Inserts seed entries
   await knex('attractions').insert([
     // Toronto attractions
     {

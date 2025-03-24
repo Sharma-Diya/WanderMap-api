@@ -1,9 +1,6 @@
-// db/seeds/04_itinerary_items.js
 export async function seed(knex) {
-  // Truncate table
   await knex.raw('TRUNCATE TABLE itinerary_items');
 
-  // Get itinerary IDs and city IDs
   const itineraries = await knex('itineraries').select('id', 'name');
   const itineraryMap = new Map(itineraries.map(itinerary => [itinerary.name, itinerary.id]));
 

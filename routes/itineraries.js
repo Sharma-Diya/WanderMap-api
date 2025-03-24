@@ -8,7 +8,7 @@ itinerariesRouter
     .get(itinerariesController.getAllItineraries);
 
 itinerariesRouter
-    .route("/:id") // Define the route with the ':id' parameter
+    .route("/:id") 
     .get(itinerariesController.getItineraryById);
 
 itinerariesRouter
