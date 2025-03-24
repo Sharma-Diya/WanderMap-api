@@ -9,11 +9,17 @@ const knex = initKnex(configuration);
 const getAllCities = async (_req, res) => {
     try {
         const cities = await knex('cities').select(
-            "id",
-            "name",
-            "province",
-            "description"
-        );
+            "cities.id", // Be specific about the cities table's id
+            "cities.name",
+            "cities.province",
+            "cities.description",
+            knex.raw('JSON_ARRAYAGG(JSON_OBJECT(\'url\', images.url, \'alt_text\', images.alt_text)) as images')
+        )
+        .leftJoin("images", function() {
+            this.on('images.imageable_id', '=', 'cities.id')
+                .on('images.imageable_type', '=', knex.raw('?', ['city']));
+        })
+        .groupBy("cities.id");
         res.status(200).json(cities);
     } catch (error) {
         console.error(error);
@@ -84,6 +90,13 @@ const getCityDetails = async (req, res) => {
         if (!city){
             return res.status(404).json({ error: "City not found" });
         }
+
+        // Fetch city images
+        const cityImages = await knex("images")
+            .select("id", "url", "alt_text", "is_featured", "display_order")
+            .where({ imageable_type: "city", imageable_id: id })
+            .orderBy("display_order");
+
         // Fetch attractions for the city
         const attractions = await knex("attractions")
             .select(
@@ -91,21 +104,24 @@ const getCityDetails = async (req, res) => {
                 "attractions.name",
                 "attractions.description",
                 "attractions.address",
-                "attractions.category"
+                "attractions.category",
             )
             .where("attractions.city_id", id);
 
-        // Fetch city images
-        const images = await knex("images")
-            .select("id", "url", "alt_text", "is_featured", "display_order")
-            .where({ imageable_type: "city", imageable_id: id })
-            .orderBy("display_order");
+        // Fetch images for each attraction
+        for (const attraction of attractions) {
+            const attractionImages = await knex("images")
+                .select("url", "alt_text")
+                .where({ imageable_type: "attraction", imageable_id: attraction.id }) // Or 'place'
+                .orderBy("display_order");
+            attraction.images = attractionImages;
+        }
 
         // Combine data into a structured response
         res.status(200).json({
             ...city,
             attractions,
-            images
+            images: cityImages // Use cityImages here
         });
 
     } catch (error) {

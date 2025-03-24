@@ -17,6 +17,8 @@ app.use("/api/cities", cityRouter);
 app.use("/api/attractions", attractionsRouter);
 app.use("/api/images", imagesRouter);
 app.use("/api/itineraries",itinerariesRouter );
+app.use('/images', express.static('public/images'));
+
 
 
 app.listen(PORT, () => {
